@@ -1,69 +1,114 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family:'Playfair Display', serif;
-overflow-x:hidden;
+body {
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    background-color: #000; /* Fondo de seguridad */
 }
 
-/* HERO */
-.hero{
-height:100vh;
-width:100%;
-background-image:url("../img/fondos/fondoArte.jpg");
-background-size:cover;
-background-position:center;
-position:relative;
-display:flex;
-align-items:center;
+/* TÍTULO PRINCIPAL */
+.texto {
+    font-family: "Ballet", cursive;
+    font-size: 5rem;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.651);
+    position: relative; /* Para asegurar que esté sobre el overlay */
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-background:linear-gradient(
-90deg,
-rgba(0,0,0,0.75) 0%,
-rgba(0,0,0,0.5) 40%,
-rgba(44, 44, 44, 0.45) 75%,
-rgba(41, 40, 41, 0.7) 100%
-);
+/* SECCIÓN HERO (FONDO) */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/fondos/fondoArte.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-/* texto */
-.texto img{
-width:670px;
-max-width:90%;
-filter:drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+/* CAPA OSCURA (El "vidrio" que daba el error) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.85) 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(44, 44, 44, 0.45) 75%,
+        rgba(41, 40, 41, 0.7) 100%
+    );
+    z-index: 1; /* Queda atrás */
 }
 
-/* Galeria */
-section .galeria{
+/* CONTENEDOR DE TODO EL CONTENIDO VISIBLE */
+.contenido {
+    position: relative;
+    z-index: 10; /* Salta por encima del overlay para permitir clics */
+    width: 100%;
+}
+
+/* CONTENEDOR FLEX (GALERÍA + LINKS) */
+.contenedorppal {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre galería e iconos */
+}
+
+/* GALERÍA ACORDEÓN */
+.galeria {
     display: flex;
     width: 800px;
     height: 430px;
     margin-left: 70px;
 }
 
-section .galeria img{
+.galeria img {
     width: 0px;
     flex-grow: 1;
     object-fit: cover;
-    opacity: .8;
-    transition: .5s ease;
+    opacity: 0.7;
+    transition: 0.5s ease;
 }
 
-section .galeria img:hover {
+.galeria img:hover {
     cursor: crosshair;
     width: 300px;
     opacity: 1;
     filter: contrast(120%);
 }
 
+/* SECCIÓN DE ICONOS (LINKS) */
+.links {
+    display: flex;
+    flex-direction: row; /* Iconos uno sobre otro */
+    gap: 65px;              /* Espacio vertical entre iconos */
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+
+.links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.651);         /* Tu color base */
+    font-size: 50px;        /* Tamaño grande para los iconos */
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* EFECTO AL PASAR EL MOUSE POR LOS ICONOS */
+.links a:hover {
+    color:#940253;         /* Color más brillante */
+    transform: scale(1.2);  /* Agranda el icono un 20% */
+    filter: drop-shadow(0px 0px 10px rgba(148, 2, 83, 0.5));
+}
