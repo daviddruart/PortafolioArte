@@ -145,12 +145,7 @@ transform:translateX(-8px);
 right:0;
 }
 
-/* MOVER BOTON */
 
-.mover{
-transform:translateX(-300px);
-transition:0.6s;
-}
 
 
 /* RESPONSIVE */
