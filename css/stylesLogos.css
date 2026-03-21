@@ -58,12 +58,23 @@ body {
 }
 
 
+/* CONTENEDOR PRINCIPAL - GRID DE LOGOS */
+.contenedorppal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
 /*efectos*/
 .efecto {
     display: flex;
     width: 400px;
     height: 130px;
-    margin-left: 70px;
     position: relative; /* Necesario para que position:absolute funcione dentro */
 }
 
@@ -98,13 +109,35 @@ body {
     filter: drop-shadow(0px 10px 30px #937516);
 }
 
+/* LEYENDA EN HOVER */
+.leyenda {
+    position: fixed;
+    top: 140px;
+    right: 90px;
+    background: rgba(147, 117, 22, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 34px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.efecto:hover .leyenda {
+    opacity: 1;
+}
+
 
 /* SECCIÓN DE ICONOS (LINKS) */
 .links {
     display: flex;
-    flex-direction: row; /* Iconos uno sobre otro */
-    gap: 65px;              /* Espacio vertical entre iconos */
-    margin-left: 40px;
+    flex-direction: row;
+    gap: 65px;
+    justify-content: center;
+    grid-column: 1 / -1;
     margin-bottom: 50px;
 }
 
