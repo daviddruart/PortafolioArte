@@ -112,16 +112,18 @@ body {
 /* LEYENDA EN HOVER */
 .leyenda {
     position: fixed;
-    top: 140px;
+    top: 80px;
     right: 90px;
-    background: rgba(147, 117, 22, 0.9);
-    color: white;
-    padding: 10px 20px;
+    background: rgba(117, 113, 101, 0.534);
+    color: rgb(206, 165, 31);
+    padding: 15px 20px;
     border-radius: 5px;
-    font-size: 34px;
-    white-space: nowrap;
+    font-size: 25px;
+    width: 60%;
+    white-space: normal;
+    word-wrap: break-word;
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
     z-index: 10;
     pointer-events: none;
 }
